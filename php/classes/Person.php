@@ -101,15 +101,7 @@ class Person {
 	}
 
 
-	/**
-	 * Person Magic Method
-	 * @param string $newPersonName
-	 * @param int $newPersonAge
-	 * @return string $newPersonName
-	 * @return int $newPersonAge
-	 *
-	 **/
-	public function __toString(string $newPersonName, int $newPersonAge) {
+	public function __toString() {
 		return "<tr><td>$this->personName.</td><td>$this->personAge</td></tr>";
 	}
 }
