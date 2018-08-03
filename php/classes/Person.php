@@ -33,6 +33,19 @@ class Person {
 		}
 	}
 
+
+	/**
+	 * Person Magic Method
+	 * @param string $newPersonName
+	 * @param int $newPersonAge
+	 * @return string $newPersonName
+	 * @return int $newPersonAge
+	 *
+	 **/
+	public function __toString(string $newPersonName, int $newPersonAge) {
+		return $this->personName . "(" . $this->personAge . ")\n";
+	}
+
 	/**
 	 * accessor method for person name
 	 *
@@ -102,3 +115,6 @@ class Person {
 		$this->personAge = $newPersonAge;
 	}
 }
+
+$toby = new Person('toby', 14);
+echo $toby;
