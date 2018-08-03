@@ -110,7 +110,7 @@ class Person {
 	 *
 	 **/
 	public function __toString(string $newPersonName, int $newPersonAge) {
-		return $this->personName . "(" . $this->personAge . ")\n";
+		return "<tr><td>$this->personName.</td><td>$this->personAge</td></tr>";
 	}
 }
 
