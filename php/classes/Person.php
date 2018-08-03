@@ -49,7 +49,6 @@ class Person {
 	 * @throws \RangeException if $newPersonName is less than or not equal to 64 characters
 	 **/
 	public function setPersonName(string $newPersonName): void {
-		$newPersonName = trim($newPersonName);
 		$newPersonName = filter_var($newPersonName, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 		if(empty($newPersonName) === true) {
 			throw(new\InvalidArgumentException("person name is empty or insecure."));
