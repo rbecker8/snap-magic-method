@@ -115,5 +115,5 @@ class Person {
 	}
 }
 
-$person = new Person('toby', 14);
+$person = new Person("Jill", 14);
 echo $person;
