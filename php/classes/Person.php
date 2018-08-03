@@ -20,7 +20,6 @@ class Person {
 	 * @throws \InvalidArgumentException if data types are not valid
 	 * @throws \RangeException if data values are out of bounds (e.g. strings to long, negative integers)
 	 * @throws \TypeError if data type violates a data hint
-	 * @throws \Exception if some other exception occurs
 	 **/
 	public function __construct(string $newPersonName, int $newPersonAge) {
 		try {
@@ -31,19 +30,6 @@ class Person {
 			$exceptionType = get_class($exception);
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
-	}
-
-
-	/**
-	 * Person Magic Method
-	 * @param string $newPersonName
-	 * @param int $newPersonAge
-	 * @return string $newPersonName
-	 * @return int $newPersonAge
-	 *
-	 **/
-	public function __toString(string $newPersonName, int $newPersonAge) {
-		return $this->personName . "(" . $this->personAge . ")\n";
 	}
 
 	/**
@@ -112,6 +98,19 @@ class Person {
 
 		// store the age
 		$this->personAge = $newPersonAge;
+	}
+
+
+	/**
+	 * Person Magic Method
+	 * @param string $newPersonName
+	 * @param int $newPersonAge
+	 * @return string $newPersonName
+	 * @return int $newPersonAge
+	 *
+	 **/
+	public function __toString(string $newPersonName, int $newPersonAge) {
+		return $this->personName . "(" . $this->personAge . ")\n";
 	}
 }
 
