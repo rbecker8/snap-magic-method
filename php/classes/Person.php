@@ -13,6 +13,25 @@ class Person {
 	private $personAge;
 
 
+	/**
+	 * Person Constructor
+	 * @param string $newPersonName
+	 * @param int $newPersonAge
+	 * @throws \InvalidArgumentException if data types are not valid
+	 * @throws \RangeException if data values are out of bounds (e.g. strings to long, negative integers)
+	 * @throws \TypeError if data type violates a data hint
+	 * @throws \Exception if some other exception occurs
+	 **/
+	public function __construct(string $newPersonName, int $newPersonAge) {
+		try {
+			$this->setPersonName($newPersonName);
+			$this->setPersonAge($newPersonAge);
+		} catch(\InvalidArgumentException | \RangeException | \TypeError | \Exception $exception) {
+			// determine what exception was thrown
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+	}
 
 	/**
 	 * accessor method for person name
