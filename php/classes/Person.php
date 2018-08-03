@@ -2,15 +2,15 @@
 
 class Person {
 	/**
-	 * name for Person
-	 * @var string name of person
-	 **/
-	private $personName;
-	/**
 	 * age for Person
 	 * @var int age of person
 	 **/
 	private $personAge;
+	/**
+	 * name for Person
+	 * @var string name of person
+	 **/
+	private $personName;
 
 
 	/**
