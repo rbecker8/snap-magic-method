@@ -92,7 +92,6 @@ class Person {
 	 * mutator method for person age
 	 *
 	 * @param int $newPersonAge new value of person age
-	 * @throws \InvalidArgumentException if the age is not an int or insecure
 	 * @throws \RangeException if $newPersonAge is < 0
 	 * @throws \RangeException if $newPersonAge is < 18
 	 * @throws \RangeException if $newPersonAge is > 118
@@ -116,5 +115,5 @@ class Person {
 	}
 }
 
-$toby = new Person('toby', 14);
-echo $toby;
+$person = new Person('toby', 14);
+echo $person;
