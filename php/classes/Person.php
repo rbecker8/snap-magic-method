@@ -51,8 +51,8 @@ class Person {
 	public function setPersonName(string $newPersonName): void {
 		$newPersonName = trim($newPersonName);
 		$newPersonName = filter_var($newPersonName, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
-		if(strlen($newPersonName) < 64) {
-			throw(new\RangeException("person name is too short"));
+		if(empty($newPersonName) === true) {
+			throw(new\InvalidArgumentException("person name is empty or insecure."));
 		}
 		// verify the name is equal to or less than 64
 		if(strlen($newPersonName) > 64) {
